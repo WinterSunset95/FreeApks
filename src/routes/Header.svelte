@@ -1,129 +1,94 @@
-<script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
-</script>
-
-<header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+<nav>
+	<h1>FreeApks</h1>
+	<ul class="navigation">
+		<li class="navlistitem">
+			<a class="navlistlink" href="/Games">Games</a>
+		</li>
+		<li class="navlistitem">
+			<a class="navlistlink" href="/Apps">Apps</a>
+		</li>
+		<li class="navlistitem">
+			<a class="navlistlink" href="/Products">Products</a>
+		</li>
+		<li class="navlistitem">
+			<a class="navlistlink" href="/Articles">Articles</a>
+		</li>
+		<li class="navlistitem">
+			<a class="navlistlink" target="_blank" href="https://github.com/WinterSunset95">Contribute</a>
+		</li>
+	</ul>
+	<div class="search">
+		<div class="icon">
+			<svg width="100%" height="100%" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+			<path fill="#000000" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34M208 336c-70.7 0-128-57.2-128-128c0-70.7 57.2-128 128-128c70.7 0 128 57.2 128 128c0 70.7-57.2 128-128 128"/>
+			</svg>
+		</div>
+		<input type="text" placeholder="Search" />
 	</div>
-
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
-
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div>
-</header>
+</nav>
 
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
+h1 {
+	width: 100%;
+}
+nav {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0 1rem;
+	background-color: var(--secondary);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
+.navigation {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
 
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
+.navlistitem {
+	padding: 0.5rem;
+}
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
+.navlistlink {
+	color: var(--text);
+	text-decoration: none;
+}
 
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
+.navlistlink:hover {
+	color: var(--highlight);
+}
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
+.search {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: var(--text);
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--highlight);
+}
 
-	path {
-		fill: var(--background);
-	}
+.search > input {
+	flex: 1;
+	border: none;
+	background-color: transparent;
+	color: var(--highlight);
+	font-size: 1rem;
+}
 
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
+.icon {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.5rem;
+}
 
-	li {
-		position: relative;
-		height: 100%;
+@media only screen and (min-width: 768px) {
+	.search, .navigation, h1 {
+		width: auto;
 	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
-	}
+}
 </style>
