@@ -1,0 +1,3 @@
+import{s as m,n as c}from"../chunks/scheduler.zMJaRgub.js";import{S as l,i as d,e as f,c as h,t as p,a as u,b as _,d as $,f as g,g as s,h as y,j as v,m as x,k as H,l as S,n as b,o as j}from"../chunks/index.TyKj7qg5.js";import{H as k}from"../chunks/Header.q0YhQ6NQ.js";function q(i){let t,a,o,r;return a=new k({}),{c(){t=f("div"),h(a.$$.fragment),o=p(`
+heyya`),this.h()},l(e){t=u(e,"DIV",{id:!0});var n=_(t);$(a.$$.fragment,n),o=g(n,`
+heyya`),n.forEach(s),this.h()},h(){y(t,"id","root")},m(e,n){v(e,t,n),x(a,t,null),H(t,o),r=!0},p:c,i(e){r||(S(a.$$.fragment,e),r=!0)},o(e){b(a.$$.fragment,e),r=!1},d(e){e&&s(t),j(a)}}}class E extends l{constructor(t){super(),d(this,t,null,q,m,{})}}export{E as component};
