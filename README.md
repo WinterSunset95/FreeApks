@@ -3,6 +3,8 @@
 Lets learn svelte and git together by building a fullstack application!!
 If you're new to FOSS, feel free to contribute
 
+<a target="_blank" href="https://free-apks.vercel.app/">Website is here</a>
+
 ## Before we start
 
 You need to make sure you have the following installed:
@@ -22,7 +24,7 @@ npm --version
 If any of the above is not installed on your machine, please refer to the official documentations available for your system.
 <hr/>
 
-# Setting up the project
+## Setting up the project
 1. Clone this repository
 ```bash
 git clone https://github.com/WinterSunset95/FreeApks
@@ -40,7 +42,7 @@ npm install
 npm run dev --open
 ```
 
-# Before editing
+## Before editing
 Before you start making changes to the codebase, make sure you are on your own branch. This is to avoid conflicting 
 code across multiple programmers. Do not - under any circumstances - push to the main branch. Contributors will be 
 assigned their own branches to work on. You will commit and push to your own branch, after which the owner will review and
@@ -65,5 +67,5 @@ git add -A && git commit -m "This is a commit message, it should contain informa
 git push
 ```
 
-# I shall handle the rest
-## Peace
+## I shall handle the rest
+# Peace

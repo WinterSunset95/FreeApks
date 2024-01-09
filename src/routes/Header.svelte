@@ -1,5 +1,5 @@
 <nav>
-	<h1>FreeApks</h1>
+	<h1><a href="/">FreeApks</a></h1>
 	<ul class="navigation">
 		<li class="navlistitem">
 			<a class="navlistlink" href="/Games">Games</a>
@@ -28,25 +28,35 @@
 </nav>
 
 <style>
-h1 {
-	width: 100%;
-}
 nav {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
 	background-color: var(--secondary);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	grid-column: span 12;
+	padding: 0;
+	margin: 0;
+}
+
+h1 > a {
+	color: var(--text);
+	text-decoration: none;
 }
 
 .navigation {
+	grid-column: span 12;
 	display: flex;
+	justify-content: space-between;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 1rem 0;
+	flex-wrap: wrap;
 }
 
 .navlistitem {
@@ -63,7 +73,7 @@ nav {
 }
 
 .search {
-	width: 100%;
+	grid-column: span 12;
 	display: flex;
 	align-items: center;
 	background-color: var(--text);
@@ -73,7 +83,6 @@ nav {
 }
 
 .search > input {
-	flex: 1;
 	border: none;
 	background-color: transparent;
 	color: var(--highlight);
@@ -87,8 +96,30 @@ nav {
 }
 
 @media only screen and (min-width: 768px) {
-	.search, .navigation, h1 {
-		width: auto;
+	h1, .navigation {
+		grid-column: span 6;
+	}
+
+	.navigation {
+		padding: 0;
+	}
+
+	.search {
+		grid-column: span 12;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	h1 {
+		grid-column: span 2;
+	}
+
+	.search {
+		margin-left: 4rem;
+	}
+
+	.navigation, .search {
+		grid-column: span 5;
 	}
 }
 </style>

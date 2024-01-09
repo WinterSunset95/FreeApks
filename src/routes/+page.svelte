@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>My page</title>
+	<title>Welcome to FreeApks</title>
 	<meta name="description" content="A page about me" />
 </svelte:head>
 
@@ -26,6 +26,7 @@
 	padding: 0;
 	margin: 0;
 }
+
 :global(.light) {
 	--primary: #606c38;
 	--secondary: #283618;
