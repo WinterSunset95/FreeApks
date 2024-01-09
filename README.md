@@ -1,38 +1,69 @@
-# create-svelte
+# FreeApks
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Lets learn svelte and git together by building a fullstack application!!
+If you're new to FOSS, feel free to contribute
 
-## Creating a project
+## Before we start
 
-If you're seeing this, you've probably already done this step. Congrats!
+You need to make sure you have the following installed:
+1. Git (open up your terminal and type this command)
+```
+git --version
+```
+2. Node
+```
+node --version
+```
+3. npm
+```
+npm --version
+```
+<hr/>
+If any of the above is not installed on your machine, please refer to the official documentations available for your system.
+<hr/>
 
+# Setting up the project
+1. Clone this repository
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone https://github.com/WinterSunset95/FreeApks
+```
+2. Go into the directory
+```
+cd FreeApks
+```
+3. Install dependencies
+```
+npm install
+```
+4. Start the server
+```
+npm run dev --open
 ```
 
-## Developing
+# Before editing
+Before you start making changes to the codebase, make sure you are on your own branch. This is to avoid conflicting 
+code across multiple programmers. Do not - under any circumstances - push to the main branch. Contributors will be 
+assigned their own branches to work on. You will commit and push to your own branch, after which the owner will review and
+merge the code.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Step by step guide:
+1. Create your own branch
+```
+git branch YourOwnBranchNameHere
+```
+2. Go to your branch
+```
+git checkout YourOwnBranchNameHere
+```
+3. Write code, develop, suffer, lose brain cells
+4. Commit your code
+```
+git add -A && git commit -m "This is a commit message, it should contain information about your changes"
+```
+5. Push to your branch
+```
+git push
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# I shall handle the rest
+## Peace
